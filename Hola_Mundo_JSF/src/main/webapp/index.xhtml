@@ -6,6 +6,14 @@
         <title>Hola Mundo JSF</title>
     </head>
     <body>
-        <h:outputLabel value="Hola Mundo desde JSF" />
+        <h:form>
+            <table>
+                <tr>
+                    <td><h:outputLabel for="nombre" value="Nombre:" /></td>
+                    <td><h:inputText id="nombre" value="#{candidato.nombre}"></h:inputText></td>
+                    <td><h:message for="nombre"></h:message> </td>
+                </tr>
+            </table>
+        </h:form>
     </body>
 </html>
