@@ -77,4 +77,35 @@ Hay dos formas de ejecutar validaciones:
 2. **Por campos interdependientes:** Se ejecuta dentro de metodos actions
 - Tag h:messages se usa para mostrar varios errores a la vez
 
+## Convertidores
 
+Definen variables con su tipo de dato entre la vista y el modelo. Tiene dos tipos:
+
+1. **Conversiones Implícitas:** JSF las hace automáticamente.
+
+``` html
+<h:inputText id="edadId" value="#{empleadoBean.edad}" />
+```
+
+2. **Conversiones Explícitas:** Hay dos maneras de hacerla:
+
+- **Con el atributo converter:** 
+``` html
+<h:inputText id="edadId" value="#{empleadoBean.edad}" converter="javax.faces.Integer" />
+```
+
+- **Con el componente converter:** 
+``` html
+<h:inputText id="edadId" value="#{empleadoBean.edad}">
+    <f:converter converterId="javax.faces.Integer" />
+</h:inputText>
+```
+
+### Conversiones Explícitas:
+En convert se anota la clase en atributo convert.
+
+``` html
+<h:inputText id="edadId" value="#{empleadoBean.edad}" convert="util.ConvertidorFecha" />
+```
+
+La clase java a la que apunta debe implementar la interfaz **javax.faces.convert.Converter**. Se debe registrar en el faces-config o indicar la anotación **@FacesConverter**. Además, debe sobreescribir el método **getAsObject()** ó **getAsString()**
