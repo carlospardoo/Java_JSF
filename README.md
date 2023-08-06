@@ -109,3 +109,47 @@ En convert se anota la clase en atributo convert.
 ```
 
 La clase java a la que apunta debe implementar la interfaz **javax.faces.convert.Converter**. Se debe registrar en el faces-config o indicar la anotación **@FacesConverter**. Además, debe sobreescribir el método **getAsObject()** ó **getAsString()**
+
+## Internacionalización
+
+JSF soporta internacionalización I18n.
+
+| Código Lenguaje / Subregión | Descripción |
+|:---------------------------:|:------------|
+|es | Español|
+|es_MX | Español / México|
+|en | Inglés|
+|en_GB | Inglés / Británico|
+|en_US | Inglés / Estados Unidos|
+
+En jSF se puede definir el idioma en archivo **faces-config.xml** o en el método action de un ManagedBean, con el objeto FacesContext y el método setLocale.
+
+### Resource Bundle 
+Es un archivo properties para definir la configuración de internacionalización.
+
+<sub>Configuración del resource bundle en el archivo faces.config.xml</sub>
+``` xml
+<application>
+    <resource-bundle>
+        <base-name>mensajes</base-name>
+        <var>msg</var>
+    </resource-bundle>
+</application>
+```
+
+En el archivo JSF se utiliza de la siguiente manera:
+
+```html
+<h:outputText value="#{msg['form.usuario']}" />
+<h:commandButton value="#{msg.enviar}" type="submit" />
+```
+
+### Sobreescritura de mensajes
+Se debe crear un archivo de propiedades.
+
+Se configura el archivo faces-config.xml.
+``` xml
+<application>
+    <message-bundle>jsf</message-bundle>
+</application>
+```
