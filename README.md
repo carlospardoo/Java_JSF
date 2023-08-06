@@ -153,3 +153,9 @@ Se configura el archivo faces-config.xml.
     <message-bundle>jsf</message-bundle>
 </application>
 ```
+
+Para cambiar idioma de manera programática (en el programa), se hace lo siguiente:
+
+``` java
+facesContext.getCurrentInstance().getViewRoot().setLocale("en");
+```

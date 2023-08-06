@@ -26,3 +26,11 @@ replay_pid*
 /Bolsa_Trabajo_V1/target/
 /Bolsa_Trabajo_V2/target/
 /Bolsa_Trabajo_V3/target/
+/Bolsa_Trabajo_V4/target/
+
+# netbeans and precompiled files
+*/faces-config.NavData
+nb-configuration.xml
+**/glassfish-web.xml
+
+
