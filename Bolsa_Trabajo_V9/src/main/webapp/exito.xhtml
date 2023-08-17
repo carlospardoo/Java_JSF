@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>
+        <title>Exito</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./WEB-INF/plantillas/plantilla.xhtml" >
+
+            <ui:define name="content" >
+                <h:form>
+                    Gracias #{candidato.nombre} por aplicar a la Vacante
+                    <br/>
+                    <h:commandLink action="index">Regresar</h:commandLink>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+
+    </h:body>
+</html>
